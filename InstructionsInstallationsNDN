@@ -1,0 +1,79 @@
+These instructions to build up the demo if you don't installed yet NDN on your PC. If you have already NFD, repo, NLSR, mini, ndn-cxx etc, switch on InstructionInstallation2
+
+Part A: Setting up the environment
+
+1) Install mini-ndn:
+	git clone https://github.com/named-data/mini-ndn.git
+	cd mini-ndn
+	sudo ./install.sh -m
+	sudo ./install.sh -i
+
+2) Install ndn-cxx:
+	cd ..
+        git clone https://github.com/named-data/ndn-cxx.git
+	cd ndn-cxx/
+	sudo ./waf configure --with-examples 
+	2.1) At this level, many dependencies may missing. Install the required dependencies and re-run the command until success. 
+ 	2.2) In a clean Ubuntu 16.04, it is probable that you have to install (but not only):
+		sudo apt-get install python-sphinx
+		sudo apt-get install libboost*
+		sudo apt-get install libcrypto++-dev
+		sudo apt-get install libssl-dev
+		sudo apt-get install libsqlite3-dev sqlite3	
+			
+	sudo ./waf
+	sudo ./waf install
+
+3) Install NFD
+	cd ..
+	git clone https://github.com/named-data/NFD.git
+	cd NFD/
+    	git submodule init && git submodule update
+	sudo ./waf configure 
+	3.1) If some depencies missing, install them. On a clean Ubuntu 16.04 it is probable you have to install:
+		sudo apt-get install libpcap-dev
+		sudo apt-get install valgrind	
+
+	sudo ./waf
+	sudo ./waf install	
+
+4) Install Chronosync
+	cd ..
+	git clone https://github.com/named-data/Chronosync
+	cd Chronosync/
+	sudo ./waf configure	
+	sudo ./waf
+	sudo ./waf install
+
+4) Install NLSR
+	cd ..
+	git clone https://github.com/named-data/NLSR
+	cd NLSR/
+	sudo ./waf configure 
+	4.1) If some depencies missing, install them. On a clean Ubuntu 16.04 it is probable you have to install:
+		sudo apt-get install liblog4cxx-dev
+	4.2) Probably you need Google protocol buffer: follow this guide https://gist.github.com/samklr/0b8a0620f82005e7f556
+	
+	sudo ./waf
+	sudo ./waf install
+
+5) Install ndn-tools
+	cd ..
+	git clone https://github.com/named-data/ndn-tools.git
+	cd ndn-tools/
+	sudo ./waf configure 
+	sudo ./waf
+	sudo ./waf install
+
+6) Install repo-ng
+	cd ..
+	git clone https://github.com/named-data/repo-ng.git
+	cd repo-ng/
+	sudo ./waf configure 
+	sudo ./waf
+	sudo ./waf install
+
+
+
+Then switch to the InstructionInstallation2
+	
