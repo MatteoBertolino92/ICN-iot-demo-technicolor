@@ -1,5 +1,6 @@
-These instructions to build up the demo if you don't installed yet NDN on your PC. If you have already NFD, repo, NLSR, mini, ndn-cxx etc, switch on InstructionInstallation2
+2017 - Matteo Bertolino
 
+These instructions to build up the demo if you don't installed yet NDN on your PC.
 Part A: Setting up the environment
 
 1) Install mini-ndn:
